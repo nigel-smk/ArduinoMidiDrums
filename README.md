@@ -16,3 +16,4 @@ http://evankale.blogspot.ca/2015/07/arduino-midi-drums.html
 
 Instructables post:
 http://www.instructables.com/id/Convert-Rockband-Controller-to-MIDI-Drums/
+https://www.instructables.com/Convert-Rockband-Controller-to-MIDI-Drums/

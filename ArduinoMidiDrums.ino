@@ -31,12 +31,12 @@
 #define START_SLOT 0     //first analog slot of piezos
 
 //MIDI note defines for each trigger
-#define SNARE_NOTE 70
-#define LTOM_NOTE 71
-#define RTOM_NOTE 72
-#define LCYM_NOTE 73
-#define RCYM_NOTE 74
-#define KICK_NOTE 75
+#define SNARE_NOTE 38 //70
+#define LTOM_NOTE 41 //71
+#define RTOM_NOTE 48 //72
+#define LCYM_NOTE 46 //73
+#define RCYM_NOTE 49 //74
+#define KICK_NOTE 36 //75
 
 //MIDI defines
 #define NOTE_ON_CMD 0x90
@@ -94,19 +94,19 @@ void setup()
     slotMap[i] = START_SLOT + i;
   }
   
-  thresholdMap[0] = KICK_THRESHOLD;
-  thresholdMap[1] = RTOM_THRESHOLD;
-  thresholdMap[2] = RCYM_THRESHOLD;
-  thresholdMap[3] = LCYM_THRESHOLD;
-  thresholdMap[4] = SNARE_THRESHOLD;
-  thresholdMap[5] = LTOM_THRESHOLD;  
-  
-  noteMap[0] = KICK_NOTE;
-  noteMap[1] = RTOM_NOTE;
-  noteMap[2] = RCYM_NOTE;
-  noteMap[3] = LCYM_NOTE;
-  noteMap[4] = SNARE_NOTE;
-  noteMap[5] = LTOM_NOTE;  
+  thresholdMap[0] = LCYM_THRESHOLD;
+  thresholdMap[1] = SNARE_THRESHOLD;
+  thresholdMap[2] = LTOM_THRESHOLD;
+  thresholdMap[3] = RTOM_THRESHOLD;
+  thresholdMap[4] = RCYM_THRESHOLD;
+  thresholdMap[5] = KICK_THRESHOLD;  
+
+  noteMap[0] = LCYM_NOTE;
+  noteMap[1] = SNARE_NOTE;
+  noteMap[2] = LTOM_NOTE;
+  noteMap[3] = RTOM_NOTE;
+  noteMap[4] = RCYM_NOTE;
+  noteMap[5] = KICK_NOTE;  
 }
 
 void loop()
@@ -223,4 +223,3 @@ void midiNoteOff(byte note, byte midiVelocity)
   Serial.write(note);
   Serial.write(midiVelocity);
 }
-
